@@ -25,8 +25,9 @@ public class Main {
                 String name  = formatter.formatCellValue(row.getCell(0)); // A열
                 String price = formatter.formatCellValue(row.getCell(1)); // B열
                 String date  = formatter.formatCellValue(row.getCell(2)); // C열
-
-                System.out.println(name + " / " + price + " / " + date);
+                if(!name.isEmpty() && !price.isEmpty() && !date.isEmpty()) {
+                    System.out.println(name + " / " + price + " / " + date);
+                }
             }
 
         } catch (Exception e) {

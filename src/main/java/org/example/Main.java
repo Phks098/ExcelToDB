@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
         // 파일 위치 주소
         String fileURL = "C:/Users/phks0/Downloads/5.진로취업지원 프로그램 수행 이력 DB.xlsx";
-
+        ExcelInsertFrame excelInsertFrame = new ExcelInsertFrame();
         File file = new File(fileURL);
         DataFormatter formatter = new DataFormatter();
 
@@ -35,5 +35,6 @@ public class Main {
             e.printStackTrace();
         }
 
+        excelInsertFrame.Start();
     }
 }

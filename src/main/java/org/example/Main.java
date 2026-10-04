@@ -39,7 +39,7 @@ public class Main {
 
         SwingUtilities.invokeLater(() -> {
             ExcelInsertFrame view = new ExcelInsertFrame();
-            ExcelDbController(view);
+            new ExcelDbController(view);
             view.setVisible(true);
         });
     }

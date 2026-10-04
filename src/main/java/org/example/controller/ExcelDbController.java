@@ -8,6 +8,6 @@ public class ExcelDbController {
     private final ExcelInsertFrame view;
 
     public ExcelDbController(ExcelInsertFrame view) {
-       this.view =view;
+       this.view = view;
     }
 }

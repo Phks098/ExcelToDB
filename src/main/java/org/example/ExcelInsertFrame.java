@@ -5,6 +5,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 /**
  * 엑셀 데이터를 불러와 선택한 열을 제외하고 DB에 Insert 하기 위한 GUI 화면
@@ -143,7 +144,13 @@ public class ExcelInsertFrame extends JFrame {
         setColumnCheckBoxes(headers);
     }
 
-    public void Start(){
-        SwingUtilities.invokeLater(() -> new ExcelInsertFrame().setVisible(true));
-    }
+    // 이벤트 등록 통로
+    public void addLoadListener(ActionListener l)   { loadButton.addActionListener(l); }
+    public void addInsertListener(ActionListener l) { insertButton.addActionListener(l); }
+
+    // Controller가 쓰는 값 조회/화면 갱신 메서드
+    public String getFilePath()  { return filePathField.getText(); }
+    public String getTableName() { return tableNameField.getText().trim(); }
+    public void showStatus(String msg)   { statusLabel.setText(msg); }
+
 }

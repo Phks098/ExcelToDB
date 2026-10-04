@@ -1,7 +1,9 @@
 package org.example;
 
 import org.apache.poi.ss.usermodel.*;
+import org.example.controller.ExcelDbController;
 
+import javax.swing.*;
 import java.io.File;
 
 //TIP 코드를 <b>실행</b>하려면 <shortcut actionId="Run"/>을(를) 누르거나
@@ -35,6 +37,10 @@ public class Main {
             e.printStackTrace();
         }
 
-        excelInsertFrame.Start();
+        SwingUtilities.invokeLater(() -> {
+            ExcelInsertFrame view = new ExcelInsertFrame();
+            ExcelDbController(view);
+            view.setVisible(true);
+        });
     }
 }
